@@ -1,4 +1,0 @@
---require expect
---reporter list
---ui bdd
---recursive

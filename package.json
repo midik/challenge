@@ -5,7 +5,7 @@
   "private": false,
   "scripts": {
     "start": "node ./index.js",
-    "test":"mocha -r esm --ui bdd ./tests/index.js"
+    "test":"mocha -r esm --ui bdd --timeout 1000 --reporter list --exit ./tests"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -14,6 +14,7 @@
     "debug": "~2.6.9",
     "esm": "^3.0.28",
     "express": "^4.16.3",
+    "http-errors": "~1.6.2",
     "moment": "^2.22.1",
     "mongoose": "^5.0.16",
     "morgan": "^1.9.0",
