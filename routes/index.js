@@ -1,0 +1,1 @@
+export pricing from './pricing';
