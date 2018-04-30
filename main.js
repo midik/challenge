@@ -52,7 +52,5 @@ routes.init(app);
 app.listen(op.get(config, 'port', 3000),
     undefined,
     undefined,
-    async () => {
-        log.info(`Express listening on port ${op.get(config, 'port')}`);
-    }
+    () => log.info(`Express listening on port ${op.get(config, 'port')}`)
 );
