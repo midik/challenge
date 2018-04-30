@@ -1,10 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import logger from 'morgan';
+import morgan from 'morgan';
 import op from 'object-path';
 import Ddos from 'ddos';
 import config from './config';
-import log from './lib/log';
+import {log, stream} from './lib/log';
 import routes from './routes';
 
 const app = express();
@@ -20,7 +20,7 @@ const ddos = new Ddos(ddosProtectionConfig);
  * setting up the middleware
  */
 app.use(ddos.express);
-app.use(logger('dev'));
+app.use(morgan('combined', {stream}));
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
