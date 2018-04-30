@@ -4,22 +4,16 @@ import op from 'object-path';
 import Ddos from 'ddos';
 import config from './config';
 import log from './lib/log';
-import routes from './routes/pricing';
-
+import routes from './routes';
 
 const app = express();
 
 
 /**
- * building the wall :)
+ * preparing the wall :)
  */
 const ddosProtectionConfig = op.get(config, 'ddos', {burst:10, limit:15});
 const ddos = new Ddos(ddosProtectionConfig);
-
-
-log.info('Welcome to Pricing API!');
-log.debug(`Node ${process.version}`);
-
 
 /**
  * setting up the middleware
@@ -29,8 +23,12 @@ app.use(logger('dev'));
 app.use(express.json());
 
 
+log.info('Welcome to Pricing API!');
+log.info(`Node ${process.version}`);
+
+
 /**
- * setting up the routes
+ * setting up the routing
  */
 app.use('/', routes);
 
@@ -53,6 +51,6 @@ app.listen(op.get(config, 'port', 3000),
     undefined,
     undefined,
     async () => {
-        log.info(`Pricing API is listening on port ${op.get(config, 'port')}`);
+        log.info(`Express listening on port ${op.get(config, 'port')}`);
     }
 );

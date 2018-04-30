@@ -1,5 +1,6 @@
 {
   "port": 3000,
+  "db": "mongodb://localhost/PricingData",
   "ddos": {
     "burst": 10,
     "limit": 15

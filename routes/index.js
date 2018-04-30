@@ -1,1 +1,5 @@
-export pricing from './pricing';
+import pricing from './pricing';
+
+export default [
+    pricing
+];
