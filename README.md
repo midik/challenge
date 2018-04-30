@@ -17,4 +17,12 @@ This “PricingDataAPI​” based on NodeJS / Express​. The service is be res
 * GET /pricing[?coupon=couponName]
 
 
+### Known bugs / todo
+
+1) mock mongo models (mockgoose?). I know that would not to be **unit** testing but.. this is a sandbox after all :)  
+2) controller test fails when mongo is unreachable (see #1)
+3) move mongo query caching to the schema's post-hook (or to a mongoose plugin)
+4) ... freedom for a perfectionist
+
+
 #### Comments and code review are welcome!

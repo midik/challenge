@@ -18,7 +18,6 @@ export const get = async (req, res) => {
 
     /**
      * fetch the record(s)
-     * @todo: try to move caching to the schema's post-hook (or to the mongoose plugin)
      */
     const items = await Price.find(couponName ? {couponName} : undefined).cache(240).exec();
 

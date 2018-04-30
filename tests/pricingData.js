@@ -19,19 +19,6 @@ describe('Pricing', () => {
 
     describe('GET /price', () => {
 
-        it('should return an array', (done) => {
-
-            const req = {};
-
-            const res = resFactory((result) => {
-                expect(result).to.be.an('array');
-                done();
-            });
-
-            pricing.get(req, res);
-        });
-
-
         it('should return an empty array', (done) => {
 
             const req = {query: {coupon: 'fake'}};
@@ -43,5 +30,22 @@ describe('Pricing', () => {
 
             pricing.get(req, res);
         });
+
+
+        it('should return a non-empty array', (done) => {
+
+            const req = {};
+
+            const res = resFactory((result) => {
+                expect(result).to.be.an('array').that.is.not.empty;
+                done();
+            });
+
+            pricing.get(req, res);
+        });
+
+
+        // etc ...
+
     });
 });
