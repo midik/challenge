@@ -7,7 +7,7 @@
 
 ### How to use
 
-* yarn install
-* npm run
+* yarn install 
+* yarn start
 
 #### Comments and code review are welcome!
