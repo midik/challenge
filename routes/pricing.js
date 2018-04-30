@@ -5,12 +5,12 @@ import * as pricing from '../controllers/pricing';
 /**
  * routes definition
  */
-export default (app) => {
+export default ({app, asyncErrorHandler}) => {
 
     const router = express.Router();
 
     app.use('/pricing', router);
 
-    router.get('/', pricing.get);
+    router.get('/', asyncErrorHandler(pricing.get));
 
 };

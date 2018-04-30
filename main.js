@@ -30,20 +30,20 @@ log.info(`Node ${process.version}`);
 
 
 /**
- * setting up the routing
+ * async error handler
  */
-routes.init(app);
+const asyncErrorHandler = (fn) => (req, res, next) => {
+    const routePromise = fn(req, res, next);
+    if (routePromise && routePromise.catch) {
+        routePromise.catch(err => next(err));
+    }
+};
 
 
 /**
- * async error handler
- */
-// const asyncErrorHandler = (fn) => (req, res, next) => {
-//     const routePromise = fn(req, res, next);
-//     if (routePromise && routePromise.catch) {
-//         routePromise.catch(err => next(err));
-//     }
-// };
+* setting up the routing
+*/
+routes.init({app, asyncErrorHandler});
 
 
 /**
