@@ -19,7 +19,7 @@ export const get = async (req, res) => {
     /**
      * fetch the record(s)
      */
-    const items = await Price.find({couponName}).exec();
+    const items = await Price.find(couponName ? {couponName} : undefined).exec();
 
-    res.status(200).json({items});
+    res.status(200).json(items);
 };
