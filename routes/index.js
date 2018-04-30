@@ -1,5 +1,14 @@
+/**
+ * Routes index
+ */
+
 import pricing from './pricing';
 
-export default [
-    pricing
+
+/**
+ * grab routes to index
+ */
+export const init = (app) => [
+    pricing(app)
+    // ...
 ];

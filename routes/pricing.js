@@ -1,9 +1,16 @@
 import express from 'express';
 import * as pricing from '../controllers/pricing';
 
-const router = express.Router();
 
+/**
+ * routes definition
+ */
+export default (app) => {
 
-router.get('/pricing', pricing.get);
+    const router = express.Router();
 
-export default router;
+    app.use('/pricing', router);
+
+    router.get('/', pricing.get);
+
+};

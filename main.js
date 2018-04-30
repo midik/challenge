@@ -5,7 +5,7 @@ import op from 'object-path';
 import Ddos from 'ddos';
 import config from './config';
 import {log, stream} from './lib/log';
-import routes from './routes';
+import * as routes from './routes';
 
 const app = express();
 
@@ -32,7 +32,7 @@ log.info(`Node ${process.version}`);
 /**
  * setting up the routing
  */
-app.use('/', routes);
+routes.init(app);
 
 
 /**
