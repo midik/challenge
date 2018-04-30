@@ -4,7 +4,7 @@ node_modules
 *.crt
 /_misc/
 
-config.json
+#config.json
 controllers/config.js
 
 ### Node template

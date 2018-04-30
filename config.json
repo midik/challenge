@@ -1,0 +1,14 @@
+{
+  "port": 3000,
+  "db": "mongodb://localhost/PricingData",
+  "ddos": {
+    "burst": 10,
+    "limit": 15
+  },
+  "cache": {
+    "engine": "redis",
+    "host": "localhost",
+    "port": 6379
+  },
+  "logdir": "./_logs"
+}
