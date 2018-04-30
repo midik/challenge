@@ -1,4 +1,5 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import logger from 'morgan';
 import op from 'object-path';
 import Ddos from 'ddos';
@@ -21,6 +22,7 @@ const ddos = new Ddos(ddosProtectionConfig);
 app.use(ddos.express);
 app.use(logger('dev'));
 app.use(express.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 log.info('Welcome to Pricing API!');

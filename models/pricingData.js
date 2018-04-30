@@ -6,9 +6,14 @@ import mongoose from 'mongoose';
 
 
 const schema = mongoose.Schema({
-    couponName: String,
-    pricingData: Object,
-    createdAt: Date     // todo
+    couponName: {
+        type: String,
+        index: true
+    },
+    pricingData: Object
+}, {
+    collection: 'pricingData'
 });
 
-export const Price = mongoose.model('pricingData.js', schema);
+
+export const Price = mongoose.model('pricingData', schema);

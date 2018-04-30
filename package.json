@@ -1,5 +1,5 @@
 {
-  "name": "SaferVPN_challenge",
+  "name": "PricingDataAPI",
   "version": "0.0.1",
   "license": "ISC",
   "private": false,
@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "an-lru-cache": "^1.0.4",
+    "body-parser": "^1.18.2",
     "cookie-parser": "~1.4.3",
     "ddos": "^0.1.28",
     "debug": "~2.6.9",

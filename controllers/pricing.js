@@ -2,7 +2,9 @@
  * Pricing controller
  */
 
+import op from 'object-path';
 import {Price} from '../lib/db';
+
 
 /**
  * Get pricing data for a coupon
@@ -12,10 +14,12 @@ import {Price} from '../lib/db';
  */
 export const get = async (req, res) => {
 
-    const coupon = op.get(req, 'params.coupon');
+    const couponName = op.get(req, 'query.coupon');
 
-    const items = Price.find();
+    /**
+     * fetch the record(s)
+     */
+    const items = await Price.find({couponName}).exec();
 
     res.status(200).json({items});
-
 };
