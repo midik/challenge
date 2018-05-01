@@ -5,7 +5,7 @@
   "private": false,
   "scripts": {
     "start": "node ./index.js",
-    "test": "mocha -r esm --ui bdd --timeout 1000 --reporter list --exit ./tests"
+    "test": "./node_modules/.bin/nyc --require esm ./node_modules/.bin/mocha --ui bdd --timeout 1000 --reporter list --exit ./tests"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^5.1.1"
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.1"
   }
 }

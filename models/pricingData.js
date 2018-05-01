@@ -10,10 +10,17 @@ const schema = mongoose.Schema({
         type: String,
         index: true
     },
-    pricingData: Object
+    pricingData: {
+        type: Object
+        // unique : true
+    }
 }, {
-    collection: 'pricingData'
+    collection: 'pricingData',
+    id: false
 });
 
 
+/**
+ * unused at this point
+ */
 export const Price = mongoose.model('pricingData', schema);

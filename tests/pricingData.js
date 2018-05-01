@@ -19,12 +19,12 @@ describe('Pricing', () => {
 
     describe('GET /price', () => {
 
-        it('should return an empty array', (done) => {
+        it('should return an empty object', (done) => {
 
             const req = {query: {coupon: 'fake'}};
 
             const res = resFactory((result) => {
-                expect(result).to.be.an('array').that.is.empty;
+                expect(result).to.be.an('object').that.is.empty;
                 done();
             });
 
@@ -32,12 +32,14 @@ describe('Pricing', () => {
         });
 
 
-        it('should return a non-empty array', (done) => {
+        it('should return a valid object', (done) => {
 
             const req = {};
 
             const res = resFactory((result) => {
-                expect(result).to.be.an('array').that.is.not.empty;
+                expect(result).to.be.an('object');
+                expect(result).to.have.a.property('couponName').that.is.a('string');
+                expect(result).to.have.a.property('pricingData').that.is.an('object');
                 done();
             });
 
