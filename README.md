@@ -11,11 +11,11 @@ This “PricingDataAPI​” based on NodeJS / Express​. The service is be res
 
 * yarn install 
 * yarn start
+* point your Postman to http://localhost:3000 
 
 ### Methods
 
 * GET /pricing[?coupon=couponName]
-
 
 ### Known bugs / todo
 
@@ -24,5 +24,8 @@ This “PricingDataAPI​” based on NodeJS / Express​. The service is be res
 3) move mongo query caching to the schema's post-hook (or to a mongoose plugin)
 4) ... freedom for a perfectionist
 
+### Testing
+
+* npm run test - will invoke the tests and show the coverage
 
 #### Comments and code review are welcome!
